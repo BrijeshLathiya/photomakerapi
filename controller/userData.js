@@ -46,15 +46,13 @@ const Canvas = require('canvas');
 // };
 
 exports.postUserData = async (req, res) => {
-    console.log("hey dude")
+    
     // Save the form data to MongoDB
     try {
         const userData = await new userModel();
         userData.MobileNo = req.body.MobileNo
         userData.UserName = req.body.UserName
         // userData.Avtar = req.Avtar
-
-        console.log(userData,"userData")
 
         await userData.save()
 
